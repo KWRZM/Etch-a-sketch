@@ -29,8 +29,11 @@ function populateBoard(size){
         let square = document.createElement("div");
         square.addEventListener('mousemove',colorSquare);
         square.style.backgroundColor = "white";
+        //square.classList.add('border-top-left');
+        square.setAttribute('draggable', 'false');
 
         board.insertAdjacentElement('beforeend',square);
+       
     }
 }
 

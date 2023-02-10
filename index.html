@@ -11,27 +11,33 @@
 <body>
     <div class="flex-container">
         <div class="title"><h1>SKETCH</h1></div>
-    
-        <div class="content">
-            <div class="board"></div>
-            <div class="buttons">
-                <button onclick="changeColor('black')">Black</button>
-                <button onclick="changeColor('white')">White</button>
-                <button onclick="changeColor('random')">Random</button>
-                <Button onclick="resetBoard()">Reset</Button>
-            </div>
-            <div>
-                <input type="text" placeholder="Size of Board" value="16" onchange="changeSize(this.value)" />
-                <button>Set Size</button>
-            </div>
-            <div class="error">
-                Inuput must be between 2 and 100
-            </div>
+        <div class="koulech">
 
+            <input id="colorPicker" type="color" value="#333333" onchange="changeColor(this.value)"></input>
+            <div class="content">
+                <div class="board"></div>
+                <div class="buttons">
+                    <button id="black" class="blackButton" onclick="changeColor('black')">Black</button>
+                    <button id="white" class="erasorButton" onclick="changeColor('white')">Eraser</button>
+                    <button id="random" class="randomButton" onclick="changeColor('random')">Random</button>
+                    <Button style="color:rgb(107, 5, 5);border-color: brown;" onclick="resetBoard()">Reset</Button>
+                    
+                </div>
+                <div>
+                    <input id="slider" type="range" min="2" max="100" placeholder="Size of Board" value="16" onchange="changeSize(this.value)" />
+                    <div id="size" style="text-align: center;" >Size: 16 x 16 px</div>
+                </div>
+                <div class="error">
+                    Inuput must be between 2 and 100
+                </div>
+                <!--<input id="colorPicker" type="color" value="#333333">!-->
+
+            </div>
         </div>
     </div>
 
     
 </body>
     <script src="script.js"></script>
+    <script src="https://unpkg.com/tinycolor2@latest/tinycolor.js"></script>
 </html>

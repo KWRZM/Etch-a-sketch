@@ -90,3 +90,10 @@ function getRandomColor() {
     }
     return color;
 }
+
+function randomPicture(){
+    const pixels = board.querySelectorAll('div');
+    pixels.forEach((div) => {
+        div.style.backgroundColor = getRandomColor();
+    });
+}
